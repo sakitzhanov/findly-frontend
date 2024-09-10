@@ -1,0 +1,92 @@
+{
+    "home": {
+        "title": "{{count}} зат өз иелерін тапты"
+    },
+    "region_list": {
+        "title": "Облыстар",
+        "name_column": "Аты",
+        "code_column": "Коды",
+        "add_button": "Қосу"
+    },
+    "region_create": {
+        "title": "Жаңа облыс",
+        "name_field": "Аты",
+        "code_field": "Коды",
+        "save_button": "Сақтау",
+        "required_message": "Енгізуге міндетті",
+        "min_length_message": "Ұзындығы {{count}} кем емес"
+    },
+    "region_details": {
+        "name_field": "Аты",
+        "code_field": "Коды",
+        "update_button": "Жаңарту",
+        "delete_button": "Жою",
+        "required_message": "Енгізуге міндетті",
+        "update_dialog_content": "Жазбаны шынымен жаңартқыңыз келеді ме?",
+        "delete_dialog_content": "Жазбаны шынымен жойғыңыз келеді ме?"
+    },
+    "city_list": {
+        "title": "Қалалар",
+        "name_column": "Аты",
+        "region_column": "Облыс",
+        "add_button": "Қосу"
+    },
+    "city_create": {
+        "title": "Жаңа қала",
+        "name_field": "Аты",
+        "region_field": "Облыс",
+        "save_button": "Сақтау",
+        "required_message": "Енгізуге міндетті",
+        "min_length_message": "Ұзындығы {{count}} кем емес"
+    },
+    "city_details": {
+        "region_field": "Облыс",
+        "name_field": "Аты",
+        "update_button": "Жаңарту",
+        "delete_button": "Жою",
+        "required_message": "Енгізуге міндетті",
+        "update_dialog_content": "Жазбаны шынымен жаңартқыңыз келеді ме?",
+        "delete_dialog_content": "Жазбаны шынымен жойғыңыз келеді ме?"
+
+    },
+    "dialog": {
+        "title": "Растау",
+        "agree_button": "Иә",
+        "disagree_button": "Жоқ"
+    },
+    "administration": {
+        "title": "Әкімшілік",
+        "regions": "Облыстар",
+        "cities": "Қалалар",
+        "categories": "Санаттар",
+        "subcategories": "Ішкі санаттар"
+    },
+    "login": {
+        "title": "Кіру",
+        "username_field": "Қолданушы аты",
+        "password_field": "Құпия сөз",
+        "button": "Кіру",
+        "required_message": "Енгізуге міндетті",
+        "forgot_password_link": "Құпия сөзді ұмыттыңыз ба?",
+        "registration_link": "Тіркелу"
+    },
+    "registration": {
+        "title": "Тіркелу",
+        "username_field": "Қолданушы аты",
+        "phone_number_field": "Телефон нөмірі",
+        "password_field": "Құпия сөз",
+        "button": "Тіркелу",
+        "required_message": "Енгізуге міндетті"
+
+    },
+    "success_create_message": "Жазба енгізілді",
+    "unsuccess_create_message": "Жазба енгізілмеді",
+    "success_update_message": "Жазба жаңартылды",
+    "success_delete_message": "Жазба жойылды",
+    "no_data": "Мәлімет жоқ",
+    "header_menu": {
+        "profile": "Профиль",
+        "administration": "Әкімшілік",
+        "exit": "Шығу"
+    }
+}

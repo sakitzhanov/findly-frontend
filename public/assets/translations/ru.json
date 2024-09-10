@@ -1,0 +1,92 @@
+{
+    "home": {
+        "title": "{{count}} вещей нашли своих хозяев"
+    },
+    "region_list": {
+        "title": "Области",
+        "name_column": "Название",
+        "code_column": "Код",
+        "add_button": "Добавить"
+    },
+    "region_create": {
+        "title": "Новая область",
+        "name_field": "Название",
+        "code_field": "Код",
+        "save_button": "Сохранить",
+        "required_message": "Обязательный ввод",
+        "min_length_message": "Минимальная длина {{count}}"
+    },
+    "region_details": {
+        "name_field": "Название",
+        "code_field": "Код",
+        "update_button": "Обновить",
+        "delete_button": "Удалить",
+        "required_message": "Обязательный ввод",
+        "update_dialog_content": "Точно хотите обновить запись?",
+        "delete_dialog_content": "Точно хотите удалить запись?"
+    },
+    "city_list": {
+        "title": "Города",
+        "name_column": "Название",
+        "region_column": "Область",
+        "add_button": "Добавить"
+    },
+    "city_create": {
+        "title": "Новый город",
+        "name_field": "Название",
+        "region_field": "Область",
+        "save_button": "Сохранить",
+        "required_message": "Обязательный ввод",
+        "min_length_message": "Минимальная длина {{count}}"
+    },
+    "city_details": {
+        "region_field": "Область",
+        "name_field": "Название",
+        "update_button": "Обновить",
+        "delete_button": "Удалить",
+        "required_message": "Обязательный ввод",
+        "update_dialog_content": "Точно хотите обновить запись?",
+        "delete_dialog_content": "Точно хотите удалить запись?"
+
+    },
+    "dialog": {
+        "title": "Подтверждение",
+        "agree_button": "Да",
+        "disagree_button": "Нет"
+    },
+    "administration": {
+        "title": "Администрирование",
+        "regions": "Области",
+        "cities": "Города",
+        "categories": "Категории",
+        "subcategories": "Подкатегории"
+    },
+    "login": {
+        "title": "Вход",
+        "username_field": "Имя пользователя",
+        "password_field": "Пароль",
+        "button": "Войти",
+        "required_message": "Обязательный ввод",
+        "forgot_password_link": "Забыли пароль?",
+        "registration_link": "Регистрация"
+    },
+    "registration": {
+        "title": "Регистрация",
+        "username_field": "Имя пользователя",
+        "phone_number_field": "Номер телефона",
+        "password_field": "Пароль",
+        "button": "Зарегистрироваться",
+        "required_message": "Обязательный ввод"
+
+    },
+    "success_create_message": "Запись была создана",
+    "unsuccess_create_message": "Запись не была создана",
+    "success_update_message": "Запись была обновлена",
+    "success_delete_message": "Запись была удалена",
+    "no_data": "Нет данных",
+    "header_menu": {
+        "profile": "Профиль",
+        "administration": "Администрирование",
+        "exit": "Выйти"
+    }
+}
