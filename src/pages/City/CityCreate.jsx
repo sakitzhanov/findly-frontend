@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Backdrop, Box, Button, CircularProgress, FormControl, FormHelperText, Grid, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
+import { Backdrop, Button, CircularProgress, FormControl, FormHelperText, Grid, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
 import { useForm, Controller } from "react-hook-form";
 import Layout from "../../components/Layout";
 import { languagesApi, citiesApi, regionsApi } from "../../dal/api";
@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const CityCreate = () => {
-    const { control, handleSubmit, formState: { errors, isValid }, getValues, setValue } = useForm();
+    const { control, handleSubmit, formState: { errors }, getValues, setValue } = useForm();
     const [languages, setLanguages] = useState([]);
     const [regions, setRegions] = useState([]);
     const [loader, setLoader] = useState(false);
@@ -33,7 +33,7 @@ const CityCreate = () => {
     useEffect(() => {
         if (regions.length > 0)
             setValue("region", regions[0].id);
-    }, [regions])
+    }, [regions, setValue])
 
     const onSubmit = async () => {
         const data = getValues();
@@ -107,15 +107,12 @@ const CityCreate = () => {
                             control={control}
                             name={`name_${item.code}`}
                             rules={{
-                                required: t('city_create.required_message'),
-                                // minLength: {
-                                //     value: 7,
-                                //     message: t('city_create.min_length_message', { count: 7 })
-                                // }
+                                required: t('city_create.required_message')
                             }}
+                            defaultValue=""
                             render={({ field }) => (
                                 <TextField
-                                {...field}
+                                    {...field}
                                     variant="outlined"
                                     label={`${t('city_create.name_field')} (${item.name})`}
                                     sx={{ width: '50%' }}

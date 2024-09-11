@@ -69,19 +69,16 @@ const RegionCreate = () => {
                             control={control}
                             name={`name_${item.code}`}
                             rules={{
-                                required: t('region_create.required_message'),
-                                // minLength: {
-                                //     value: 7,
-                                //     message: t('region_create.min_length_message', { count: 7 })
-                                // }
+                                required: t('region_create.required_message')
                             }}
+                            defaultValue=""
                             render={({ field }) => (
                                 <TextField
                                     {...field}
                                     variant="outlined"
                                     label={`${t('region_create.name_field')} (${item.name})`}
                                     sx={{ width: '50%' }}
-                                    error={errors[`name_${item.code}`]}
+                                    error={!!errors[`name_${item.code}`]}
                                     helperText={errors[`name_${item.code}`]?.message}
                                 />
                             )}
@@ -95,13 +92,14 @@ const RegionCreate = () => {
                         rules={{
                             required: t('region_create.required_message')
                         }}
+                        defaultValue=""
                         render={({ field }) => (
                             <TextField
                                 {...field}
                                 variant="outlined"
                                 label={t('region_create.code_field')}
                                 sx={{ width: '50%' }}
-                                error={errors.code}
+                                error={!!errors.code}
                                 helperText={errors.code?.message}
                             />
                         )}

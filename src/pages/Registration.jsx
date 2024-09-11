@@ -101,8 +101,8 @@ const Registration = () => {
                                 rules={{
                                     required: t('registration.required_message')
                                 }}
+                                defaultValue=""
                                 render={({ field }) => (
-
                                     <TextField
                                         {...field}
                                         variant="outlined"
@@ -111,7 +111,7 @@ const Registration = () => {
                                         margin="normal"
                                         fullWidth
                                         required
-                                        error={errors.username}
+                                        error={!!errors.username}
                                         helperText={errors.username?.message}
                                     />
                                 )}
@@ -123,6 +123,7 @@ const Registration = () => {
                                 rules={{
                                     required: t('registration.required_message')
                                 }}
+                                defaultValue=""
                                 render={({ field: { onChange, value } }) => (
                                     <ReactInputMask
                                         mask="+7(999)999-99-99"
@@ -130,17 +131,19 @@ const Registration = () => {
                                         value={value}
                                         onChange={onChange}
                                     >
-                                        {(inputProps) => <TextField
-                                            {...inputProps}
-                                            variant="outlined"
-                                            id="phoneNumber"
-                                            label={t('registration.phone_number_field')}
-                                            margin="normal"
-                                            fullWidth
-                                            required
-                                            error={errors.phoneNumber}
-                                            helperText={errors.phoneNumber?.message}
-                                        />}
+                                        {(inputProps) => (
+                                            <TextField
+                                                {...inputProps}
+                                                variant="outlined"
+                                                id="phoneNumber"
+                                                label={t('registration.phone_number_field')}
+                                                margin="normal"
+                                                fullWidth
+                                                required
+                                                error={!!errors.phoneNumber}
+                                                helperText={errors.phoneNumber?.message}
+                                            />
+                                        )}
                                     </ReactInputMask>
                                 )}
                             />
@@ -150,8 +153,8 @@ const Registration = () => {
                                 rules={{
                                     required: t('registration.required_message')
                                 }}
+                                defaultValue=""
                                 render={({ field }) => (
-
                                     <TextField
                                         {...field}
                                         variant="outlined"
@@ -161,7 +164,7 @@ const Registration = () => {
                                         margin="normal"
                                         fullWidth
                                         required
-                                        error={errors.password}
+                                        error={!!errors.password}
                                         helperText={errors.password?.message}
                                     />
                                 )}

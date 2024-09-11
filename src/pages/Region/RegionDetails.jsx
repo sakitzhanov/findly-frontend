@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Alert, Backdrop, Box, Button, CircularProgress, Grid, TextField, Typography } from '@mui/material';
+import { Backdrop, Button, CircularProgress, Grid, TextField, Typography } from '@mui/material';
 import { useForm, Controller, useWatch } from "react-hook-form";
 import Layout from "../../components/Layout";
 import { languagesApi, regionsApi } from "../../dal/api";
 import { useTranslation } from "react-i18next";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import DialogWindow from "../../components/DialogWindow";
-import CheckIcon from '@mui/icons-material/Check';
 import { useDispatch } from "react-redux";
 import { setSuccessDelete, setSuccessUpdate } from "../../redux/regionListReducer";
 
 const RegionDetails = () => {
-    const { control, handleSubmit, formState: { errors, isValid }, getValues } = useForm();
+    const { control,  formState: { errors }, getValues } = useForm();
     const [languages, setLanguages] = useState([]);
     const [data, setData] = useState(null);
     const [loader, setLoader] = useState(false);
@@ -37,7 +36,7 @@ const RegionDetails = () => {
         }
 
         fetch();
-    }, []);
+    }, [id]);
 
     useEffect(() => {
         if (data) {
@@ -120,7 +119,7 @@ const RegionDetails = () => {
                                     variant="outlined"
                                     label={`${t('region_details.name_field')} (${item.language.name})`}
                                     sx={{ width: '60%' }}
-                                    error={errors[`name_${item.language.code}`]}
+                                    error={!!errors[`name_${item.language.code}`]}
                                     helperText={errors[`name_${item.language.code}`]?.message}
                                 />
                             )}
@@ -141,7 +140,7 @@ const RegionDetails = () => {
                                 variant="outlined"
                                 label={t('region_details.code_field')}
                                 sx={{ width: '60%' }}
-                                error={errors.code}
+                                error={!!errors.code}
                                 helperText={errors.code?.message}
                             />
                         )}

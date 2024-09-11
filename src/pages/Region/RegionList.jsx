@@ -94,7 +94,7 @@ const RegionList = () => {
                 <Alert
                     onClose={() => dispatch(setSuccessUpdate(false))}
                     severity="success"
-                    variant="filled"
+                    variant="standard"
                     sx={{ width: '100%' }}
                 >
                     {t('success_create_message')}

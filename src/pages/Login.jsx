@@ -5,17 +5,14 @@ import { useEffect, useState } from "react";
 import LanguageIcon from '@mui/icons-material/Language';
 import { languagesApi } from "../dal/api";
 import i18next from "i18next";
-import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Controller, useForm } from "react-hook-form";
 
 
 const Login = () => {
-    const { control, handleSubmit, formState: { errors, isValid }, getValues } = useForm();
+    const { control, handleSubmit, formState: { errors } } = useForm();
     const [languageAnchorEl, setLanguageAnchorEl] = useState(null);
-    const [headerAnchorEl, setHeaderAnchorEl] = useState(null);
     const [languages, setLanguages] = useState([]);
-    const navigate = useNavigate();
     const currentLanguage = localStorage.getItem("i18nextLng");
     const { t } = useTranslation();
 
@@ -104,6 +101,7 @@ const Login = () => {
                                 rules={{
                                     required: t('login.required_message')
                                 }}
+                                defaultValue=""
                                 render={({ field }) => (
                                     <TextField
                                         {...field}
@@ -113,7 +111,7 @@ const Login = () => {
                                         margin="normal"
                                         fullWidth
                                         required
-                                        error={errors.username}
+                                        error={!!errors.username}
                                         helperText={errors.username?.message}
                                     />
                                 )}
@@ -124,6 +122,7 @@ const Login = () => {
                                 rules={{
                                     required: t('login.required_message')
                                 }}
+                                defaultValue=""
                                 render={({ field }) => (
                                     <TextField
                                         {...field}
@@ -134,7 +133,7 @@ const Login = () => {
                                         margin="normal"
                                         fullWidth
                                         required
-                                        error={errors.password}
+                                        error={!!errors.password}
                                         helperText={errors.password?.message}
                                     />
                                 )}

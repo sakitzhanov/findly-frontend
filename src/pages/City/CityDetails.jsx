@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Alert, Backdrop, Box, Button, CircularProgress, FormControl, FormHelperText, Grid, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
+import { Backdrop, Button, CircularProgress, FormControl, FormHelperText, Grid, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
 import { useForm, Controller, useWatch } from "react-hook-form";
 import Layout from "../../components/Layout";
-import { languagesApi, cit, citiesApi, regionsApi } from "../../dal/api";
+import { languagesApi, citiesApi, regionsApi } from "../../dal/api";
 import { useTranslation } from "react-i18next";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import DialogWindow from "../../components/DialogWindow";
-import CheckIcon from '@mui/icons-material/Check';
 import { useDispatch } from "react-redux";
-import { setSuccessUpdate, setUnsuccessUpdate, setSuccessDelete, setUnsuccessDelete } from "../../redux/cityListReducer";
+import { setSuccessUpdate, setSuccessDelete } from "../../redux/cityListReducer";
 
 const CityDetails = () => {
-    const { control, handleSubmit, formState: { errors, isValid }, getValues, setValue } = useForm();
+    const { control, formState: { errors }, getValues, setValue } = useForm();
     const [languages, setLanguages] = useState([]);
     const [regions, setRegions] = useState([]);
     const [data, setData] = useState(null);
@@ -41,7 +40,7 @@ const CityDetails = () => {
         }
 
         fetch();
-    }, []);
+    }, [id]);
 
     useEffect(() => {
         if (data) {
@@ -57,7 +56,7 @@ const CityDetails = () => {
         if (data) {
             setValue("region", data.region.id);
         }
-    }, [data])
+    }, [data]);
 
     const handleUpdateSubmit = async () => {
         const submitData = getValues();
