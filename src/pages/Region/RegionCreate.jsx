@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Backdrop, Box, Button, CircularProgress, Grid, TextField, Typography } from '@mui/material';
+import { Backdrop, Button, CircularProgress, Grid, TextField, Typography } from '@mui/material';
 import { useForm, Controller } from "react-hook-form";
 import Layout from "../../components/Layout";
 import { languagesApi, regionsApi } from "../../dal/api";
@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const RegionCreate = () => {
-    const { control, handleSubmit, formState: { errors, isValid }, getValues } = useForm();
+    const { control, handleSubmit, formState: { errors }, getValues } = useForm();
     const [languages, setLanguages] = useState([]);
     const [loader, setLoader] = useState(false);
     const { t } = useTranslation();
