@@ -3,7 +3,7 @@ import React from "react";
 import { AppBar, IconButton, Menu, MenuItem, Toolbar } from "@mui/material";
 import { useEffect, useState } from "react";
 import LanguageIcon from '@mui/icons-material/Language';
-import { languagesApi } from "../dal/api";
+import { instance, languagesApi } from "../dal/api";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 import { Controller, useForm } from "react-hook-form";
@@ -15,6 +15,7 @@ const Login = () => {
     const [languages, setLanguages] = useState([]);
     const currentLanguage = localStorage.getItem("i18nextLng");
     const { t } = useTranslation();
+    const [loader, setLoader] = useState(false);
 
     useEffect(() => {
         async function fetch() {
@@ -40,7 +41,17 @@ const Login = () => {
     }
 
     const onSubmit = async (data) => {
-        console.log(data);
+        setLoader(true);
+
+        try {
+            const res = await instance.post("/api/login", data);
+
+            console.log(res);
+
+        } catch (e) {
+            console.log(e);
+            setLoader(false);
+        }
     };
 
     return (
