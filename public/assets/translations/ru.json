@@ -49,6 +49,26 @@
         "delete_dialog_content": "Точно хотите удалить запись?"
 
     },
+    "category_list": {
+        "title": "Категории",
+        "name_column": "Название",
+        "add_button": "Добавить"
+    },
+    "category_create": {
+        "title": "Новая категория",
+        "name_field": "Название",
+        "save_button": "Сохранить",
+        "required_message": "Обязательный ввод",
+        "min_length_message": "Минимальная длина {{count}}"
+    },
+    "category_details": {
+        "name_field": "Название",
+        "update_button": "Обновить",
+        "delete_button": "Удалить",
+        "required_message": "Обязательный ввод",
+        "update_dialog_content": "Точно хотите обновить запись?",
+        "delete_dialog_content": "Точно хотите удалить запись?"
+    },
     "dialog": {
         "title": "Подтверждение",
         "agree_button": "Да",

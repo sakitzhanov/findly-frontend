@@ -26,7 +26,7 @@ const Administration = () => {
                             </ListItemButton>
                         </ListItem>
                         <ListItem>
-                            <ListItemButton component={NavLink} to="/regions">
+                            <ListItemButton component={NavLink} to="/categories">
                                 <ListItemText primary={t('administration.categories')} />
                             </ListItemButton>
                         </ListItem>

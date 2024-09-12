@@ -49,6 +49,26 @@
         "delete_dialog_content": "Жазбаны шынымен жойғыңыз келеді ме?"
 
     },
+    "category_list": {
+        "title": "Санаттар",
+        "name_column": "Аты",
+        "add_button": "Қосу"
+    },
+    "category_create": {
+        "title": "Жаңа санат",
+        "name_field": "Аты",
+        "save_button": "Сақтау",
+        "required_message": "Енгізуге міндетті",
+        "min_length_message": "Ұзындығы {{count}} кем емес"
+    },
+    "category_details": {
+        "name_field": "Аты",
+        "update_button": "Жаңарту",
+        "delete_button": "Жою",
+        "required_message": "Енгізуге міндетті",
+        "update_dialog_content": "Жазбаны шынымен жаңартқыңыз келеді ме?",
+        "delete_dialog_content": "Жазбаны шынымен жойғыңыз келеді ме?"
+    },
     "dialog": {
         "title": "Растау",
         "agree_button": "Иә",
