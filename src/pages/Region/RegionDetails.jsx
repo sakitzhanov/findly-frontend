@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 import { setSuccessDelete, setSuccessUpdate } from "../../redux/regionListReducer";
 
 const RegionDetails = () => {
-    const { control,  formState: { errors }, getValues } = useForm();
+    const { control,  handleSubmit, formState: { errors }, getValues } = useForm();
     const [languages, setLanguages] = useState([]);
     const [data, setData] = useState(null);
     const [loader, setLoader] = useState(false);
@@ -174,7 +174,7 @@ const RegionDetails = () => {
             </Grid>
             <DialogWindow
                 open={openUpdateDialog}
-                handleSubmit={handleUpdateSubmit}
+                handleSubmit={handleSubmit(handleUpdateSubmit)}
                 handleClose={() => setOpenUpdateDialog(false)}
                 content={t('region_details.update_dialog_content')}
             />
