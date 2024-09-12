@@ -9,15 +9,15 @@ import Paper from '@mui/material/Paper';
 import React, { useEffect, useState } from "react";
 import Layout from "../../components/Layout";
 import { useTranslation } from "react-i18next";
-import { citiesApi } from "../../dal/api";
+import { subcategoriesApi } from "../../dal/api";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setSuccessCreate, setSuccessDelete, setSuccessUpdate } from "../../redux/cityListReducer";
 import { setUnsuccessCreate } from "../../redux/regionListReducer";
 
-const CityList = () => {
+const SubcategoryList = () => {
     const { t } = useTranslation();
-    const [cities, setCities] = useState([]);
+    const [subcategories, setSubcategories] = useState([]);
     const navigate = useNavigate();
     const { successCreate, unsuccessCreate, successUpdate, unsuccessUpdate, successDelete, unsuccessDelete,  } = useSelector((state) => state.cityList);
     const dispatch = useDispatch();
@@ -25,8 +25,8 @@ const CityList = () => {
 
     useEffect(() => {
         async function fetch() {
-            const res = await citiesApi.search();
-            setCities(res.data);
+            const res = await subcategoriesApi.search();
+            setSubcategories(res.data);
         }
 
         fetch();
@@ -35,7 +35,7 @@ const CityList = () => {
     return (
         <Layout>
             <Typography variant="h2" gutterBottom>
-                {t('city_list.title')}
+                {t('subcategory_list.title')}
             </Typography>
             <Grid container spacing={4}>
                 <Grid item xs={12}>
@@ -43,14 +43,14 @@ const CityList = () => {
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>{t('city_list.name_column')}</TableCell>
-                                    <TableCell align="right">{t('city_list.region_column')}</TableCell>
+                                    <TableCell>{t('subcategory_list.name_column')}</TableCell>
+                                    <TableCell align="right">{t('subcategory_list.category_column')}</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {cities.length !== 0 && cities.map(city => (
+                                {subcategories.length !== 0 && subcategories.map(subcategory => (
                                     <TableRow
-                                        key={city.id}
+                                        key={subcategory.id}
                                         sx={{
                                             '&:last-child td, &:last-child th': {
                                                 border: 0
@@ -58,17 +58,17 @@ const CityList = () => {
                                             cursor: 'pointer'
                                         }}
                                         hover
-                                        onClick={() => navigate(`/cities/${city.id}`)}
+                                        onClick={() => navigate(`/subcategories/${subcategory.id}`)}
                                     >
                                         <TableCell component="th" scope="row">
-                                            {city.translations.find(item => item.language.code === currentLanguage).name}
+                                            {subcategory.translations.find(item => item.language.code === currentLanguage).name}
                                         </TableCell>
                                         <TableCell align="right">
-                                            {city.region.translations.find(item => item.language.code === currentLanguage).name}
+                                            {subcategory.category.translations.find(item => item.language.code === currentLanguage).name}
                                         </TableCell>
                                     </TableRow>
                                 ))}
-                                {cities.length === 0 && <TableRow>
+                                {subcategories.length === 0 && <TableRow>
                                     <TableCell colSpan={2} align="center">
                                         {t('no_data')}
                                     </TableCell>
@@ -78,7 +78,7 @@ const CityList = () => {
                     </TableContainer>
                 </Grid>
                 <Grid item xs={12}>
-                    <Button variant="contained" onClick={() => navigate("/cities/create")}>{t('city_list.add_button')}</Button>
+                    <Button variant="contained" onClick={() => navigate("/subcategories/create")}>{t('subcategory_list.add_button')}</Button>
                 </Grid>
             </Grid>
             <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} open={successCreate} autoHideDuration={3000} onClose={() => dispatch(setSuccessCreate(false))}>
@@ -125,4 +125,4 @@ const CityList = () => {
     )
 }
 
-export default CityList;
+export default SubcategoryList;

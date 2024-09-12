@@ -17,6 +17,9 @@ import Registration from './pages/Registration';
 import CategoryList from './pages/Category/CategoryList';
 import CategoryCreate from './pages/Category/CategoryCreate';
 import CategoryDetails from './pages/Category/CategoryDetails';
+import SubcategoryList from './pages/Subcategory/SubcategoryList';
+import SubcategoryCreate from './pages/Subcategory/SubcategoryCreate';
+import SubcategoryDetails from './pages/Subcategory/SubcategoryDetails';
 
 const theme = createTheme({});
 
@@ -44,6 +47,11 @@ function App() {
             <Route index element={<CategoryList />} />
             <Route path="create" element={<CategoryCreate />} />
             <Route path=":id" element={<CategoryDetails />} />
+          </Route>
+          <Route path="/subcategories">
+            <Route index element={<SubcategoryList />} />
+            <Route path="create" element={<SubcategoryCreate />} />
+            <Route path=":id" element={<SubcategoryDetails />} />
           </Route>
           <Route path='/administration' element={<Administration />} />
         </Routes>

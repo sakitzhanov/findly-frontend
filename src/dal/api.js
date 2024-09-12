@@ -33,3 +33,4 @@ export const languagesApi = resourceApi("languages");
 export const regionsApi = resourceApi("regions");
 export const citiesApi = resourceApi("cities");
 export const categoriesApi = resourceApi("categories");
+export const subcategoriesApi = resourceApi("subcategories");

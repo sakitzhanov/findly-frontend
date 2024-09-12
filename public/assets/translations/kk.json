@@ -69,6 +69,30 @@
         "update_dialog_content": "Жазбаны шынымен жаңартқыңыз келеді ме?",
         "delete_dialog_content": "Жазбаны шынымен жойғыңыз келеді ме?"
     },
+    "subcategory_list": {
+        "title": "Ішкі санаттар",
+        "name_column": "Аты",
+        "category_column": "Санат",
+        "add_button": "Қосу"
+    },
+    "subcategory_create": {
+        "title": "Жаңа ішкі санат",
+        "name_field": "Аты",
+        "category_field": "Санат",
+        "save_button": "Сақтау",
+        "required_message": "Енгізуге міндетті",
+        "min_length_message": "Ұзындығы {{count}} кем емес"
+    },
+    "subcategory_details": {
+        "category_field": "Санат",
+        "name_field": "Аты",
+        "update_button": "Жаңарту",
+        "delete_button": "Жою",
+        "required_message": "Енгізуге міндетті",
+        "update_dialog_content": "Жазбаны шынымен жаңартқыңыз келеді ме?",
+        "delete_dialog_content": "Жазбаны шынымен жойғыңыз келеді ме?"
+
+    },
     "dialog": {
         "title": "Растау",
         "agree_button": "Иә",

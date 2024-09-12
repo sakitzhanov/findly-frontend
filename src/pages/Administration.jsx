@@ -31,7 +31,7 @@ const Administration = () => {
                             </ListItemButton>
                         </ListItem>
                         <ListItem>
-                            <ListItemButton component={NavLink} to="/regions">
+                            <ListItemButton component={NavLink} to="/subcategories">
                                 <ListItemText primary={t('administration.subcategories')} />
                             </ListItemButton>
                         </ListItem>
